@@ -34,6 +34,8 @@ final class HomeViewModel: ObservableObject {
         let username = [Constants.User.username: username,
                         Constants.User.platform: Constants.User.platformName]
         db.collection(Constants.User.collection).document(uuid).setData(username, merge: true)
+        getUsers()
+        getCalls()
         
     }
     
